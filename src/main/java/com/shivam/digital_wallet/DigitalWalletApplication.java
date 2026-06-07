@@ -21,9 +21,34 @@ public class DigitalWalletApplication {
 					}
 				}
 				
-				String url = props.getProperty("spring.datasource.url", "jdbc:postgresql://localhost:5432/digital-wallet");
-				String user = props.getProperty("spring.datasource.username", "postgres");
-				String pass = props.getProperty("spring.datasource.password", "shivam884");
+				String url = System.getenv("SPRING_DATASOURCE_URL");
+				if (url == null || url.isEmpty()) {
+					String dbHost = System.getenv("DB_HOST");
+					String dbPort = System.getenv("DB_PORT");
+					String dbName = System.getenv("DB_NAME");
+					if (dbHost != null && !dbHost.isEmpty()) {
+						url = "jdbc:postgresql://" + dbHost + ":" + (dbPort != null && !dbPort.isEmpty() ? dbPort : "5432") + "/" + dbName;
+					}
+				}
+				if (url == null || url.isEmpty()) {
+					url = props.getProperty("spring.datasource.url", "jdbc:postgresql://localhost:5432/digital-wallet");
+				}
+
+				String user = System.getenv("SPRING_DATASOURCE_USERNAME");
+				if (user == null || user.isEmpty()) {
+					user = System.getenv("DB_USERNAME");
+				}
+				if (user == null || user.isEmpty()) {
+					user = props.getProperty("spring.datasource.username", "postgres");
+				}
+
+				String pass = System.getenv("SPRING_DATASOURCE_PASSWORD");
+				if (pass == null || pass.isEmpty()) {
+					pass = System.getenv("DB_PASSWORD");
+				}
+				if (pass == null || pass.isEmpty()) {
+					pass = props.getProperty("spring.datasource.password", "shivam884");
+				}
 				
 				// Resolve env vars like ${DB_USERNAME:postgres}
 				url = resolveValue(url);
