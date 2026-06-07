@@ -216,7 +216,7 @@ export const Landing: React.FC = () => {
             <span className="font-display font-semibold text-lg text-slate-800 dark:text-zinc-200">PayFlow</span>
           </div>
           <p className="text-xs text-slate-400 dark:text-zinc-600">
-            &copy; {new Date().getFullYear()} PayFlow Systems. All rights reserved. Designed with senior engineering guidelines.
+            &copy; {new Date().getFullYear()} PayFlow Systems. All rights reserved. Made by Shivam Paliwal.
           </p>
         </div>
       </footer>
