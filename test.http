@@ -1,0 +1,62 @@
+# POST http://localhost:8080/auth/login
+# Content-Type: application/json
+
+# {
+#   "email":"rahuul@gmail.com",
+#   "password":"123456"
+# }
+
+
+# POST http://localhost:8080/wallet/deposit
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWl0QGdtYWlsLmNvbSIsImlhdCI6MTc4MDcyNzQ5NiwiZXhwIjoxNzgwODEzODk2fQ.fIkoTqFxhW7UQwn7XD5AsaIM2o6NvzTzId5o3wCQu2g
+# Content-Type: application/json
+
+# {
+#   "amount": 1000
+# }
+
+# POST http://localhost:8080/wallet/transfer
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWl0QGdtYWlsLmNvbSIsImlhdCI6MTc4MDcyNzQ5NiwiZXhwIjoxNzgwODEzODk2fQ.fIkoTqFxhW7UQwn7XD5AsaIM2o6NvzTzId5o3wCQu2g
+# Content-Type: application/json
+
+# {
+#   "receiverEmail": "rahuul@gmail.com",
+#   "amount": 300
+# }
+
+# POST http://localhost:8080/auth/register
+# Content-Type: application/json
+
+# {
+#   "name":"Rahulye",
+#   "email":"rahuul@gmail.com",
+#   "password":"123456"
+# }
+
+# GET http://localhost:8080/wallet/balance
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWl0QGdtYWlsLmNvbSIsImlhdCI6MTc4MDcyNzQ5NiwiZXhwIjoxNzgwODEzODk2fQ.fIkoTqFxhW7UQwn7XD5AsaIM2o6NvzTzId5o3wCQu2g
+
+# GET http://localhost:8080/wallet/transactions
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWl0QGdtYWlsLmNvbSIsImlhdCI6MTc4MDcyNzQ5NiwiZXhwIjoxNzgwODEzODk2fQ.fIkoTqFxhW7UQwn7XD5AsaIM2o6NvzTzId5o3wCQu2g
+
+# GET http://localhost:8080/users/profile
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYWh1dWxAZ21haWwuY29tIiwiaWF0IjoxNzgwNzMwMTcxLCJleHAiOjE3ODA4MTY1NzF9.J2-w7IbosdejAI6U3thCAizF-lI3oUtfP60h8Lq2K1s
+
+# POST http://localhost:8080/auth/login
+# Content-Type: application/json
+
+# {
+#   "email": "amit@gmail.com",
+#   "password": "123456"
+# }
+
+# GET http://localhost:8080/admin/dashboard
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWl0QGdtYWlsLmNvbSIsImlhdCI6MTc4MDczMTk3NCwiZXhwIjoxNzgwODE4Mzc0fQ.UrVe90fS19cxAOzXpx4lOmvJrDpATHEkH3vb8B2eHeg
+
+POST http://localhost:8080/wallet/withdraw
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWl0QGdtYWlsLmNvbSIsImlhdCI6MTc4MDczMTk3NCwiZXhwIjoxNzgwODE4Mzc0fQ.UrVe90fS19cxAOzXpx4lOmvJrDpATHEkH3vb8B2eHeg
+Content-Type: application/json
+
+{
+  "amount": 999999
+}
